@@ -2,8 +2,9 @@ const express = require('express');
 const request = require('request');
 const path = require('path');
 var googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyCRzWQ8-rAKBlmS6Ov75gAflPlKXOn-ju8'
+  key: googleKey
 });
+const {googleKey, docKey} = require('./config/config');
 
 let app = express();
 const publicPath = path.join(__dirname, '../public');
@@ -11,10 +12,10 @@ const port = process.env.PORT || 3000;
 app.use(express.static(publicPath));
 
 app.get('/doctorList', (req, res) => {
-  var loc = req.header.'x-auth',loc;
+  var loc = req.get('x-value').loc;
   var radius = 50;
   var sortType = 'full-name-asc';
-  var name = req.header.'x-auth'.name;
+  var name = req.get('x-value').name;
   if (!name) {
     name = '';
   }
@@ -33,7 +34,7 @@ app.get('/doctorList', (req, res) => {
   });
 
   var options = {
-      url: `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=${lat}%2C${lon}%2C${radius}&user_location=${userLat}%2C${userLon}&sort=${sortType}&skip=0&limit=10&user_key=0f19d3d98e79a0151530380a3576b721`
+      url: `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=${lat}%2C${lon}%2C${radius}&user_location=${userLat}%2C${userLon}&sort=${sortType}&skip=0&limit=10&user_key=${docKey}`
   };
 
   let objToSend = {obj: new Array(10)};
@@ -49,7 +50,7 @@ app.get('/doctorList', (req, res) => {
               address: body.data[i].practices[0].visit_address
             }
             objToSend.obj[i] = dummyObj;
-            console.log(JSON.stringify(dummyObj, null, '\t'));
+            //console.log(JSON.stringify(dummyObj, null, '\t'));
           }
       } else if (error) {
         //console.log('error: ', error);
