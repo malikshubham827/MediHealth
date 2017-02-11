@@ -24,7 +24,7 @@ document.querySelectorAll('.userInput input').forEach((a) => a.addEventListener(
       }
     }
 
-    request.open('GET', 'https://www.medihealth.herokuapp.com/doctorList', true);
+    request.open('GET', 'https://medihealth.herokuapp.com/doctorList', true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.setRequestHeader('x-value', values);
     request.send();
