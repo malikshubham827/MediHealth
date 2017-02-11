@@ -1,10 +1,10 @@
 const express = require('express');
 const request = require('request');
 const path = require('path');
+const {googleKey, docKey} = require('./config/config');
 var googleMapsClient = require('@google/maps').createClient({
   key: googleKey
 });
-const {googleKey, docKey} = require('./config/config');
 
 let app = express();
 const publicPath = path.join(__dirname, '../public');
