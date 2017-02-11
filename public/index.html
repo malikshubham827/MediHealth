@@ -1,0 +1,198 @@
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="assassins" />
+
+  <link rel="stylesheet" href="style1.css"  />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Amatica SC' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Codystar' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+
+<link rel="shortcut icon" href="images/favicon-medkit.ico" type="image/x-icon">
+  <title>Medi Health</title>
+
+  <!-- <script>
+function showResult1(str) {
+  if (str.length==0) {
+    document.getElementById("livesearch1").innerHTML="";
+    document.getElementById("livesearch1").style.border="0px";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("livesearch1").innerHTML=this.responseText;
+      document.getElementById("livesearch1").style.border="1px solid #A5ACB2";
+    }
+  }
+  xmlhttp.open("GET",""+str,true);//TODO----------------------------------------s
+  xmlhttp.send();
+}
+  function showResult2(str) {
+    if (str.length==0) {
+      document.getElementById("livesearch2").innerHTML="";
+      document.getElementById("livesearch2").style.border="0px";
+      return;
+    }
+    if (window.XMLHttpRequest) {
+      // code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+    } else {  // code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function() {
+      if (this.readyState==4 && this.status==200) {
+        document.getElementById("livesearch2").innerHTML=this.responseText;
+        document.getElementById("livesearch2").style.border="1px solid #A5ACB2";
+      }
+    }
+    xmlhttp.open("GET",""+str,true);//TODO----------------------------------------s
+    xmlhttp.send();
+}
+    function showResult3(str) {
+      if (str.length==0) {
+        document.getElementById("livesearch3").innerHTML="";
+        document.getElementById("livesearch3").style.border="0px";
+        return;
+      }
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+      } else {  // code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=function() {
+        if (this.readyState==4 && this.status==200) {
+          document.getElementById("livesearch3").innerHTML=this.responseText;
+          document.getElementById("livesearch3").style.border="1px solid #A5ACB2";
+        }
+      }
+      xmlhttp.open("GET",""+str,true);//TODO----------------------------------------s
+      xmlhttp.send();
+}
+</script> -->
+
+
+
+</head>
+
+<body>
+
+
+
+<!-- <div class="navbar-1"> -->
+<!-- <header> -->
+<!-- <div class="glob"> -->
+
+<div class="flexContainer">
+<div class="flexLeft">
+<i class="fa fa-medkit fa-2x" aria-hidden="true" style="float:left; color:red; margin-top:0.5vh"></i>
+
+      <h1 class = "name" text-align="center";>
+      MEDI  HEALTH
+    </h1>
+  </div>
+  <!-- hidden -->
+  <div class="container" onclick="myFunction(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  <div class="menu" id="men">
+    <div>
+      Home
+    </div>
+    <div>
+      Blog
+    </div>
+    <div>
+      Contact Us
+    </div>
+  </div>
+
+  <div class="navbar flexRight">
+    <ul class="nv">
+      <li>
+        <a href="#about" >Contact Us</a>
+      </li>
+      <!-- <li>
+        <a href="#skills">Buy Medicines</a>
+      </li> -->
+
+      <li>
+        <a href="#connect">Blog</a>
+      </li>
+      <li>
+        <a href="#contact">Home</a>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+
+<!-- </div> -->
+<!-- </header> -->
+
+  <!-- <div class="fixed-img-1" id="about">
+
+  </div> -->
+<!-- </div> -->
+
+<script>
+function myFunction(x) {
+    x.classList.toggle("change");
+    // var y=
+    // document.querySelector(".menu").style.visibility;
+    // if(y === hidden) {
+    //   document.querySelector(".menu").style.visibility=visible;
+    // }
+    // else {
+    //   document.querySelector(".menu").style.visibility=none;
+    // }
+    document.getElementById("men").classList.toggle("change1");
+    document.getElementById("ui").classList.toggle("change2");
+}
+</script>
+
+<div class="userInput" id="ui">
+  <!-- <form class="userInput"> -->
+  <div><input type="text" name="search" placeholder="Search Location"/></div>
+  <!-- <div>
+      <input type="text" name = "search1" placeholder="Search Location" style="position: absolute; left: -9999px"/>
+  </div> -->
+
+  <div><input type="text" name="search2" placeholder="Search Doctor"/></div>
+
+  <!-- <div><input type="text" name="search3" placeholder="Search Speciality" /></div> -->
+
+  <!-- </form> -->
+</div>
+
+
+<div class = "below-top">
+</div>
+
+<div class="text-card">
+
+</div>
+
+<script src="js/main.js"></script>
+<!-- <img src="images/medicine.jpg" alt="medicine"> -->
+</body>
+
+
+
+
+
+
+AIzaSyC4s3Dwq8yKHm-CVJfmQrRFLkxbIE6LevA

@@ -1,0 +1,318 @@
+.navbar{
+  /*position:fixed;*/
+  /*top:2vh;
+  left:0;
+  width:100vw;*/
+  display:flex;
+  /*z-index: 1;*/
+}
+
+
+/*h2{
+  font-family: "Amatica SC";
+  font-size: 70px;
+  color: MidnightBlue;
+  text-align: center;
+}*/
+
+ul.nv{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow:hidden;
+  flex: 1 1 auto;
+  /*background-color: #003666;*/
+  height: 50px;
+  right:0;
+  /*margin-left: 15vw;*/
+}
+
+.below-top{
+  background-image: url(images/medicine.jpg);
+  height: 50vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: static;
+  /*opacity: 0.8;*/
+}
+
+/*.glob{
+  position:fixed;
+  top:0;
+  left:0;
+}*/
+
+ul.nv li{
+  float: right;
+}
+
+li:hover {
+  background-color: white;
+}
+
+ul.nv li a{
+  display:block;
+  color: white;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-family: "Quicksand";
+  font-size: 20px;
+
+}
+
+
+ul.nv li a:hover{
+  background-color: white;
+  color: red;
+}
+
+.name{
+  /*float:left;*/
+  text-align:left;
+  color: #2F4F4F;
+  font-family: "Quicksand";
+  /*filter: blur(10px);*/
+  /*position: relative;*/
+  /*margin-top: 3vh;
+  margin-left: 3vw;*/
+  /*top: 0;
+  left: 3vw;*/
+  /*float: none;*/
+  /*z-index: 1;*/
+  /*background-image: url("images/medicine.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  top:0;*/
+
+}
+
+
+/*.fixed-img-1{
+      position:static;
+      background-image: url("images/medicine.jpg");
+      min-height: 700px;
+      opacity:0.8;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+}*/
+
+
+.container {
+    display: none;
+    /*visibility: hidden;*/
+}
+
+/*.bar1, .bar2, .bar3 {
+    display:none;
+    visibility: hidden;
+}*/
+
+.flexContainer {
+  /*inherit:false;*/
+  display: flex;
+  position: sticky;
+  top:5px;
+
+}
+
+.flexLeft {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex: 5 1 auto;
+  display: flex;
+  align-items: center;
+  background-color: rgba(1,1,1,0.1);
+
+}
+
+
+.flexRight {
+  flex: 20 1 auto;
+  align-items: center;
+  background-color: #003666;
+
+}
+
+input[type=text] {
+    width: auto;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    /*background-image: url('fa-search');
+    background-position: 10px 10px;*/
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    /*-webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;*/
+    /*background-position: ;*/
+    background-image: url('http://www.kirupa.com/images/search.png');
+    /*background-repeat: no-repeat;*/
+
+}
+
+/*input[type=text]:focus {
+    width: 100%;
+}*/
+.menu{
+  display:none;
+  /*visibility:hidden;*/
+  /*hidden:true;*/
+}
+
+
+@media screen and (max-width:768px) {
+  .container {
+      display: inline-block;
+      cursor: pointer;
+      float: right;
+      display: flex;
+      flex-direction: column;
+      /*align-content: center;*/
+      justify-content: space-around;
+      align-items:
+      /*display: block;*/
+      visibility: visible;
+      background-color: rgba(1,1,1,0.1);
+      z-index:5;
+
+    }
+    .bar1, .bar2, .bar3 {
+        width: 55px;
+        height: 5px;
+        background-color:black;
+        margin: 11px -26px;
+        transition: 0.4s;
+        display: block;
+        visibility: visible;
+    }
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+        transform: rotate(-45deg) translate(-22px, 17px) ;
+
+
+    }
+
+    .change .bar2 {opacity: 0;}
+
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+        transform: rotate(45deg) translate(-22px, -17px) ;
+    }
+
+    .change{
+      background-color: #ccc;
+    }
+    .navbar, .navbar ul li a{
+      display:none;
+    }
+    .change1 {
+      z-index:2;
+      background-color: #ccc;
+      color: white;
+      height: 100vh;
+      width: 100vw;
+      top:0;
+      right:0;
+      left:0;
+
+      position:fixed;
+      text-align: center;
+      visibility:visible;
+      /*display: block;*/
+      vertical-align: middle;
+      font-size: 10vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+    }
+    .change1 div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+}
+
+
+
+@media (max-width:1010px) {
+  h2{
+      font-size: 30px;
+  }
+  p{
+    font-size: 15px;
+  }
+  .text-card-image{
+    display:none;
+  }
+  .connect{
+    font-size: 25px;
+  }
+  .connect a{
+    margin:5px 10px;
+  }
+ ul.skill li{
+    width:100%;
+    left:0;
+   margin:0;
+  }
+  ul.skill{
+    position:absolute;
+    left:0;
+    margin:0;
+  }
+}
+
+
+
+
+.userInput {
+  display: flex;
+  width: vw;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  position: sticky;
+  top:80px;
+}
+
+div {
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: row wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.userInput div {
+  flex: 1 1 auto;
+}
+
+.text-card{
+
+  background-color: WhiteSmoke;
+  height: auto;
+  min-height: 100vh;
+  width:100%;
+  line-height:1.5;
+}
+
+.change2{
+  visibility:hidden;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+}

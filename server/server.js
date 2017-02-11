@@ -1,26 +1,39 @@
 const express = require('express');
 const request = require('request');
+const path = require('path');
+var googleMapsClient = require('@google/maps').createClient({
+  key: 'AIzaSyCRzWQ8-rAKBlmS6Ov75gAflPlKXOn-ju8'
+});
 
 let app = express();
+const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
-
-// var PythonShell = require('python-shell');
-//
-// PythonShell.run('./my_script.py', function (err) {
-//   if (err) throw err;
-//   console.log('finished');
-// });
+app.use(express.static(publicPath));
 
 app.get('/doctorList', (req, res) => {
-  var lat = req.header.'x-value'.lat;
-  var lon = req.header.'x-value'.lon;
-  var radius = req.header.'x-value'.radius;
-  var userLon = req.header.'x-value'.userLon;
-  var userLat = req.header.'x-value'.userLat;
-  var sortType = req.header.'x-value'.sortType;
+  var loc = req.header.'x-auth',loc;
+  var radius = 50;
+  var sortType = 'full-name-asc';
+  var name = req.header.'x-auth'.name;
+  if (!name) {
+    name = '';
+  }
+
+  var lat, lon;
+  googleMapsClient.geocode({
+    address: addr
+  }, function(err, response) {
+    if (!err) {
+      //console.log(response.json.results[0].geometry.location);
+      lat = response.json.results[0].geometry.location.lat;
+      lon = response.json.results[0].geometry.location.lon;
+    } else {
+      res.status(500).send('Unable to connect to the server');
+    }
+  });
 
   var options = {
-      url: `https://api.betterdoctor.com/2016-03-01/doctors?location=${lat}%2C${lon}%2C${radius}&user_location=${userLat}%2C${userLon}&sort=${sortType}&skip=0&limit=10&user_key=0f19d3d98e79a0151530380a3576b721`
+      url: `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=${lat}%2C${lon}%2C${radius}&user_location=${userLat}%2C${userLon}&sort=${sortType}&skip=0&limit=10&user_key=0f19d3d98e79a0151530380a3576b721`
   };
 
   let objToSend = {obj: new Array(10)};
@@ -40,12 +53,13 @@ app.get('/doctorList', (req, res) => {
           }
       } else if (error) {
         //console.log('error: ', error);
-        res.send('Unable to fetch data');
+        res.status(500).send('Unable to fetch data');
       }
   }
   request(options, callback);
   res.status(200).send(JSON.stringify(objToSend));
 });
+
 
 app.listen(port, () => {
   console.log(`App running successfully on port ${port}`);
